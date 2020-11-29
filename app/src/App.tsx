@@ -2,25 +2,44 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const message: string = 'Hello React!!';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        {items.map((item: Item) => (
+          <li key={item.id}>{item.title}</li>
+        ))}
+      </ul>
+      <Child message="子コンポーネント" />
     </div>
   );
 }
+
+type Props = {
+  message: string
+}
+
+const Child: React.FC<Props> = (props) => {
+  return (
+    <p>{props.message}</p>
+  )
+}
+
+type Item = {
+  id: number,
+  title: string
+}
+
+const items: Item[] = [
+  {
+    id: 1,
+    title: '一番高い商品'
+  }, {
+    id: 2,
+    title: '一番ダサい商品'
+  }
+]
 
 export default App;
