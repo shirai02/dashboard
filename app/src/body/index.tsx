@@ -12,6 +12,7 @@ const body: React.FC = () => {
                     <Add fontSize="large" />
                 </div>
             </div>
+            <iframe className={classes.iframe} id="inline-frame" src="https://www.google.com/"></iframe>
         </React.Fragment>
     );
 }

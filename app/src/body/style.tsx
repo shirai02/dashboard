@@ -22,6 +22,12 @@ const useStyles = makeStyles((theme: Theme) =>
             left: '50%',
             transform: 'translateX(-50%) translateY(-50%)',
         },
-    }));
-
+        iframe: {
+            position: 'absolute',
+            left: '50%',
+            height: '100%',
+            width: '50%',
+        },
+    })
+);
 export default useStyles;
